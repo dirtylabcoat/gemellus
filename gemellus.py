@@ -37,7 +37,7 @@ def sha1(fname):
 if __name__ == "__main__":
   config = config_from_args(sys.argv[1:])
   # Create SQLite DB and table
-  conn = sqlite3.connect('/tmp/tmp.db')
+  conn = sqlite3.connect('/tmp/gemellus.db')
   conn.execute('DROP TABLE IF EXISTS files')
   conn.execute('CREATE TABLE files (filepath VARCHAR(256), size INT, hash VARCHAR(32))')
   for subdir, dirs, files in os.walk(config.input_dir, topdown = True):
